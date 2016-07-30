@@ -8,23 +8,6 @@
     <link rel="stylesheet" type="text/css" href="css/normalize.css"/>
     <link rel="stylesheet" type="text/css" href="css/demo.css"/>
     <link rel="stylesheet" type="text/css" href="css/login.css"/>
-    <style>
-        .btn {
-            font-family: Arial;
-            color: #DF657F;
-            font-size: 20px;
-            background: #2F3238;
-            padding: 10px 20px 10px 20px;
-            border: solid #747981 4px;
-            text-decoration: none;
-            width: 7em;
-        }
-
-        .btn:hover {
-            background: #ffffff;
-            text-decoration: none;
-        }
-    </style>
 </head>
 <body class="content bgcolor-4">
 <div class="container">
@@ -42,14 +25,14 @@
     ?>
     <form method="post" action="login.php">
 				<span class="input input--kuro">
-					<input class="input__field input__field--kuro" type="text" id="input-7" name="email"/>
+					<input class="input__field input__field--kuro" type="text" id="input-7" name="email" required/>
 					<label class="input__label input__label--kuro" for="input-7">
 						<span class="input__label-content input__label-content--kuro">Email Address</span>
 					</label>
 				</span>
         <br/>
         <span class="input input--kuro">
-					<input class="input__field input__field--kuro" type="password" name="pword" id="input-8"/>
+					<input class="input__field input__field--kuro" type="password" name="pword" id="input-8" required/>
 					<label class="input__label input__label--kuro" for="input-8">
 						<span class="input__label-content input__label-content--kuro">Password</span>
 					</label>
@@ -60,6 +43,6 @@
 						<a href="signup.html"><h3 style="color:#DF657F;">Sign Up Here</h3></a>
 				</span>
     </form>
-</div><!-- /container -->
+</div>
 </body>
 </html>

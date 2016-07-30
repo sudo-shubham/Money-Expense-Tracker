@@ -1,5 +1,9 @@
 <?php
 session_start();
+if(!$_SESSION['email'])
+{
+    header("Location:index.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en" class="no-js">
@@ -15,7 +19,7 @@ session_start();
 <body class="content bgcolor-4">
 <div class="container">
     <h3 style="color:#FFF; float:left; margin-left:20px;">Welcome, <?php echo $_SESSION['name']; ?></h3>
-    <h3 style="color:#FFF; float:right; margin-right:20px;"><?php echo "Current Salary : Rs. " . $_SESSION['salary']; ?></h3>
+    <h3 style="color:#FFF; float:right; margin-right:20px;">Current Salary : Rs. <?php echo $_SESSION['salary']; ?></h3>
     <h2 style="color:#FFF; margin-top:100px;">Current Expenses</h2>
     <table id="issues">
         <tr>
@@ -48,7 +52,6 @@ session_start();
         </tr>';
             $sum=$sum+$row["amount"];
         }
-
 ?>
         <tr>
             <form method="post" action="expense.php">
@@ -71,7 +74,7 @@ session_start();
             <th colspan="4">Savings:-<?php echo $_SESSION['salary']-$sum; ?></th>
         </tr>
     </table>
-
+    <a href="logout.php"><h3 style="color:#FFF; margin-left:20px;">Logout</h3></a>
 </div>
 </body>
 </html>
