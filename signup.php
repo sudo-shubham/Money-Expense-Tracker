@@ -1,7 +1,4 @@
 <?php
-$errmsg_arr = array();
-$errflag = false;
-
 $dbhost = "localhost";
 $dbname = "moneytracker";
 $dbuser = "root";

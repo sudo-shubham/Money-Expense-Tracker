@@ -24,6 +24,32 @@ session_start();
             <th>Date</th>
             <th>Amount</th
         </tr>
+        <?php
+        $dbhost = "localhost";
+        $dbname = "moneytracker";
+        $dbuser = "root";
+        $dbpass = "";
+
+        try {
+        $conn = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
+        } catch (PDOException $e) {
+        echo $e->getMessage();
+        }
+        $dbh = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
+        $sql = "SELECT * FROM expense WHERE email='".$_SESSION['email']."'";
+        $users = $conn->query($sql);
+        $sum=0;
+        foreach ($users as $row) {
+            echo '<tr>
+            <td>'.$row["category"].'</td>
+            <td>'.$row["description"].'</td>
+            <td>'.$row["date"].'</td>
+            <td>'.$row["amount"].'</td>
+        </tr>';
+            $sum=$sum+$row["amount"];
+        }
+
+?>
         <tr>
             <form method="post" action="expense.php">
                 <td><select name="category">
@@ -32,17 +58,17 @@ session_start();
                         <option value="Food">Food</option>
                         <option value="Transportation">Transportation</option>
                     </select></td>
-                <td><input type="text" name=""desc" placeholder="Description"></td>
+                <td><input type="text" name="desc" placeholder="Description"></td>
 
                 <td><input type="date" name="date" placeholder="DD/MM/YYYY Format"></td>
-                <td><input type="number" placeholder="Rs Spent"><input type="submit" value="Add Expense"></td>
+                <td><input type="number" name="amount" placeholder="Rs Spent"><input type="submit" value="Add Expense"></td>
             </form>
         </tr>
         <tr>
-            <th colspan="4">Total Spent:-</th>
+            <th colspan="4">Total Spent:-<?php echo $sum; ?></th>
         </tr>
         <tr>
-            <th colspan="4">Savings:-</th>
+            <th colspan="4">Savings:-<?php echo $_SESSION['salary']-$sum; ?></th>
         </tr>
     </table>
 
