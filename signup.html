@@ -31,24 +31,37 @@
 				<h2 style="color:#FFF;">Money Expense Tracker<br><br>Sign Up</h2>
 				<form method="post" action="login.php">
 				<span class="input input--kuro">
-					<input class="input__field input__field--kuro" type="text" id="input-7" name="email"/>
+					<input class="input__field input__field--kuro" type="text" id="input-7" name="name"/>
 					<label class="input__label input__label--kuro" for="input-7">
-						<span class="input__label-content input__label-content--kuro">Email Address</span>
+						<span class="input__label-content input__label-content--kuro">Name</span>
 					</label>
 				</span>
 				<br/>
+        <span class="input input--kuro">
+          <input class="input__field input__field--kuro" type="text" id="input-7" name="email"/>
+          <label class="input__label input__label--kuro" for="input-7">
+            <span class="input__label-content input__label-content--kuro">Email Address</span>
+          </label>
+        </span>
+        <br/>
+        <span class="input input--kuro">
+          <input class="input__field input__field--kuro" type="password" name="pword" id="input-8" />
+          <label class="input__label input__label--kuro" for="input-8">
+            <span class="input__label-content input__label-content--kuro">Password</span>
+          </label>
+        </span>
 				<span class="input input--kuro">
-					<input class="input__field input__field--kuro" type="password" name="pword" id="input-8" />
+					<input class="input__field input__field--kuro" type="password" name="cpword" id="input-8" />
 					<label class="input__label input__label--kuro" for="input-8">
-						<span class="input__label-content input__label-content--kuro">Password</span>
+						<span class="input__label-content input__label-content--kuro">Confirm Password</span>
 					</label>
 				</span>
 				<br/>
 				<span class="input input--kuro">
-					<input type="submit" value="Log In" class="btn"/>
-						<a href="signup.html"><h3 style="color:#DF657F;">Sign Up Here</h3></a>
+					<input type="submit" value="Sign Up" class="btn"/>
+          <a href="index.html"><h3 style="color:#DF657F;">Login  Here</h3></a>
 				</span>
-        </form>
+                </form>
 		</div><!-- /container -->
 	</body>
 </html>
